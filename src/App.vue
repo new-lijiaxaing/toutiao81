@@ -2,6 +2,6 @@
 <router-view/>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 
 </style>
