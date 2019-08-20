@@ -81,6 +81,11 @@ export default {
             window.localStorage.setItem('user-info', JSON.stringify(result.data.data))
             // 编程式导航
             this.$router.push('/home')
+          }).catch(() => {
+            this.$message({
+              message: '警告哦，这是一条警告消息',
+              type: 'warning'
+            })
           })
         }
       })
