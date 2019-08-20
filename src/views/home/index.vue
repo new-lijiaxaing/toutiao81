@@ -14,8 +14,9 @@
       <layout-header></layout-header>
     </el-header>
     <!-- 中间区域 -->
-    <el-main>
-      右侧
+    <el-main style="padding:0 0 ;">
+      <!-- 二级路由的容器 -->
+      <router-view></router-view>
     </el-main>
   </el-container>
   </el-container>
@@ -24,9 +25,7 @@
 <script>
 
 export default {
-  components: {
 
-  }
 }
 </script>
 
