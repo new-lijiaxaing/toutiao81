@@ -78,14 +78,9 @@ export default {
             url: '/authorizations',
             data: this.formData // post参数是在data中写入的
           }).then(result => {
-            window.localStorage.setItem('user-info', JSON.stringify(result.data.data))
+            window.localStorage.setItem('user-info', JSON.stringify(result.data))
             // 编程式导航
             this.$router.push('/home')
-          }).catch(() => {
-            this.$message({
-              message: '警告哦，这是一条警告消息',
-              type: 'warning'
-            })
           })
         }
       })
