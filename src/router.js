@@ -8,6 +8,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/page',
+    //   component: () => import('./views/page')
+    // },
     {
       path: '/login',
       name: 'login',
