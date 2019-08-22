@@ -24,12 +24,12 @@ export default new Router({
       children: [{
         path: '',
         component: Main// 默认二级路由组件
+      }, {
+        path: '/home/comment', // 评论列表
+        component: () => import('./views/comment/index.vue')// 按需加载的写法
       }]
-    },
-    {
-      path: '/home/comment', // 评论列表
-      component: () => import('./views/comment')// 按需加载的写法
     }
+
     // {
     //   path: '/about',
     //   name: 'about',
