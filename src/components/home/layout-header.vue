@@ -53,7 +53,7 @@ export default {
         this.$router.push('/home/account') // 跳转到账户信息
       } else if (command === 'git') {
         // 跳转到git地址
-        window.location.href = 'https://github.com/shuiruohanyu/81heimatoutiao'
+        window.location.href = 'https://github.com/new-lijiaxaing/toutiao81'
       } else {
         // 退出
         window.localStorage.clear() // 擦除本项目在浏览器上所有前端缓存
