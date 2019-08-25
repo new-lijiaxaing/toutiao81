@@ -21,7 +21,6 @@
      <el-form-item label="频道" prop='channel_id'>
           <el-select v-model='formData.channel_id'>
               <el-option :label="item.name" :value="item.id" v-for="item in channels" :key="item.id"></el-option>
-              <el-option :label="item.name" :value="item.id" v-for="item in channels" :key="item.id"></el-option>
           </el-select>
       </el-form-item>
       <el-form-item>
@@ -62,10 +61,12 @@ export default {
     publish (draft) {
       this.$refs.myForm.validate((isOK) => {
         if (isOK) {
-          // 发布文章
+          let { articleId } = this.$route.params
+          let method = articleId ? 'put' : 'post'// 根据文章id确定是编辑还是新增
+          let url = articleId ? `/articles/${articleId}` : '/articles'// 根据id确定当前的请求地址
           this.$axios({
-            method: 'post',
-            url: '/articles',
+            method,
+            url,
             params: { draft }, // 是否为草稿
             data: this.formData
           }).then(() => {
@@ -84,10 +85,10 @@ export default {
     },
     // 通过文章id获取文章信息
     getArticleById () {
-      let { articleId } = this.$router.params
+      let { articleId } = this.$route.params
       this.$axios({
         url: `/articles/${articleId}`
-      }).this(result => {
+      }).then(result => {
         this.formData = result.data// 将文章数据给页面数据进行绑定
       })
     }

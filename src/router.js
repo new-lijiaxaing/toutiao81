@@ -42,7 +42,7 @@ export default new Router({
         component: () => import('./views/publish') // 按需加载的写法
       }, {
         path: '/home/publish/:articleId', // 编辑文章 动态路由 定义了一个articleId
-        component: () => ('./views/publish')// 按需加载的写法
+        component: () => import('./views/publish')// 按需加载的写法
       }
       ]
     }
