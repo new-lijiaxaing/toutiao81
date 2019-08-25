@@ -34,6 +34,9 @@ export default new Router({
       }, {
         path: '/home/material', // 素材列表
         component: () => import('./views/material/index.vue')// 按需加载的写法
+      }, {
+        path: '/home/articles', // 内容列表
+        component: () => import('./views/articles') // 按需加载的写法
       }]
     }
 
