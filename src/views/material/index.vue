@@ -62,7 +62,7 @@ export default {
       list: [],
       page: {
         currentPage: 1,
-        pageSize: 15,
+        pageSize: 21,
         total: 0
       }
     }
