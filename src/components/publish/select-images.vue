@@ -1,6 +1,5 @@
 <template>
-  <el-card>
-        <el-card v-loading="loading">
+  <el-card v-loading="loading">
     <el-tabs v-model="activeName">
       <el-tab-pane label="素材库" name="material">
         <div class="material-list">
@@ -37,7 +36,7 @@ export default {
       loading: false,
       page: {
         currentPage: 1,
-        pageSize: 10,
+        pageSize: 9,
         total: 0
       }
     }
