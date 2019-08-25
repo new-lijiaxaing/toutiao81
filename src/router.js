@@ -13,6 +13,10 @@ export default new Router({
     //   component: () => import('./views/page')
     // },
     {
+      path: '*', // 通配符 匹配找不到家的路由
+      component: () => import('./views/404')
+    },
+    {
       path: '/login',
       name: 'login',
       component: Login
