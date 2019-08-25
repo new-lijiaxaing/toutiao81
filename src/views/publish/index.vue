@@ -61,6 +61,21 @@ export default {
     }
   },
   methods: {
+    // 接收封面组件传过来的 参数 url index
+    updateImages (url, index) {
+      // vue中数组不能通过 this.list[i] = 新值得方式赋值 不是响应式的
+      // this.formData.cover.images[]
+      // 下面的方式是响应式 => 数据变化  => 视图变化
+      this.formData.cover.images = this.formData.cover.images.map((item, i) => {
+        // if (i === index) {
+        //   // 更新某条数据
+        //   return url
+        // }
+        // return item
+        return i === index ? url : item
+      })
+      // this.formData.cover.images.map((item, i) => i === index ? url : item) 炫技模式
+    },
     changeType () {
       // 可以获取到最新的封面类型
       // 去改变当前的images类型
