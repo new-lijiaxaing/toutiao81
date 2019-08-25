@@ -142,16 +142,17 @@ export default {
         this.list = result.data.results // 将当前的数据赋值给data中对象
         this.page.total = result.data.total_count // 当前总条数
       })
+    },
+    // 获取频道列表数据
+    getChannels () {
+      this.$axios({
+        url: '/channels'
+      }).then(result => {
+        this.channels = result.data.channels
+      })
     }
   },
-  // 获取频道列表数据
-  getChannels () {
-    this.$axios({
-      url: '/channels'
-    }).then(result => {
-      this.channels = result.data.channels
-    })
-  },
+
   // 过滤器
   filters: {
     statusText (value) {
